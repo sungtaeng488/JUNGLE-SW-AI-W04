@@ -103,8 +103,19 @@ int main()
 
 void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 {
-    /* add your code here */
+    int index1 = 1;
+    int targetSize = ll1->size * 2;
+
+    while (ll1->size < targetSize && ll2->size > 0)
+    {
+        insertNode(ll1, index1, ll2->head->item);
+
+        removeNode(ll2, 0);
+
+        index1 += 2;
+    }
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 
