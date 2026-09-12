@@ -104,9 +104,9 @@ int main()
 void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 {
     int index1 = 1;
-    int targetSize = ll1->size * 2;
+    int i = ll1->size * 2;
 
-    while (ll1->size < targetSize && ll2->size > 0)
+    while (ll1->size < i && ll2->size > 0)
     {
         insertNode(ll1, index1, ll2->head->item);
 
