@@ -114,6 +114,16 @@ int main()
 void createStackFromLinkedList(LinkedList *ll, Stack *s)
 {
     /* add your code here */
+	//스택에 넣기
+	ListNode *cur = ll->head;
+	for(int a = 0 ; a<ll->size;a++){
+		push(s,cur->item);
+		cur = cur->next;
+
+
+
+	}
+
 }
 
 void removeEvenValues(Stack *s)
