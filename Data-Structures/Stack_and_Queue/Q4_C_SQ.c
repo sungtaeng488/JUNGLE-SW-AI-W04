@@ -116,10 +116,11 @@ void reverse(Queue *q)
 // ll의 사이즈 만큼 돌리고
 	Stack s;
 	int size = q->ll.size;
-	//
+	//큐의 원소를 전부 빼서 스택에 
 	for(int i = 0 ; i<size;i++){
 		push(&s,dequeue(q));
 	}
+	//스택에서 꺼낸 값을 다시 큐에 넣어야
 	for(int i = 0 ; i<size;i++){
 		enqueue(q,pop(&s));
 	}
