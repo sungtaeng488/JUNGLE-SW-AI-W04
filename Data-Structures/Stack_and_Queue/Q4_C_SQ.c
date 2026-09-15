@@ -114,6 +114,7 @@ void reverse(Queue *q)
 {
 /* add your code here */
 // ll의 사이즈 만큼 돌리고
+	//스택 하나 만들고
 	Stack s;
 	int size = q->ll.size;
 	//큐의 원소를 전부 빼서 스택에 
