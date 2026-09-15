@@ -110,6 +110,22 @@ int main()
 void recursiveReverse(Queue *q)
 {
 /* add your code here */
+	//연결리스트 7번이랑 비슷하게 하나 빼고 뒤로 넣는 다는 느낌.
+	int item = 0;
+
+	if(q->ll.size == 0){
+		return;
+	}
+	//그것을 빼고 다음 재귀로 들어감
+	item = dequeue(q);
+
+	recursiveReverse(q);
+	//올라오면서 그 값을 넣는다.
+	enqueue(q,item);
+
+	
+	
+
 }
 
 //////////////////////////////////////////////////////////////////

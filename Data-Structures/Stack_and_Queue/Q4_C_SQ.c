@@ -113,6 +113,18 @@ int main()
 void reverse(Queue *q)
 {
 /* add your code here */
+// ll의 사이즈 만큼 돌리고
+	Stack s;
+	int size = q->ll.size;
+	//
+	for(int i = 0 ; i<size;i++){
+		push(&s,dequeue(q));
+	}
+	for(int i = 0 ; i<size;i++){
+		enqueue(q,pop(&s));
+	}
+
+	
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -104,6 +104,33 @@ int main()
 int isStackPairwiseConsecutive(Stack *s)
 {
   /* add your code here */
+  //사이즈가 홀수면 바로 false
+  LinkedList *ll = &(s->ll);
+  ListNode *cur = ll->head;
+  int count =0 ;
+
+
+  if(ll->size %2 !=0){
+	return 0;
+
+  }
+  //연속된 두 값이 1차이면 합격 -> count++ -> count값이 사이즈 반 나누값이랑 같으면 true
+  for(int a =0 ; a < (ll->size)/2;a++){
+	if(abs((cur->item)-(cur->next->item)) == 1){
+		count++;
+	}
+	else{
+		return 0;
+	}
+	cur = cur->next->next;
+	
+
+  }
+  if(count == (ll->size)/2 ){
+	return 1;
+
+  }
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////
