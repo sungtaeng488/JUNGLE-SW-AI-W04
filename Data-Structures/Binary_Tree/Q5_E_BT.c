@@ -106,6 +106,17 @@ int main()
 void mirrorTree(BTNode *node)
 {
 	/* add your code here */
+    BTNode *tmp;
+    if(node == NULL){
+        return;
+    }
+    mirrorTree(node->left);
+    mirrorTree(node->right);
+    tmp = node->right;
+    node->right = node->left;
+    node->left = tmp;
+
+    
 }
 
 //////////////////////////////////////////////////////////////////////////////////

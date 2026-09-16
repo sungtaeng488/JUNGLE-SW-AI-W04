@@ -106,6 +106,18 @@ int main()
 void printSmallerValues(BTNode *node, int m)
 {
 	/* add your code here */
+    //돌면서 조건문 하나씩 체크 하고 그게 되면 stack에 넣는 식으로?
+    //stack으로 안넣고 그냥 print해도댐
+    if(node==NULL){
+        return;
+    }
+    if(node->item <m){
+        printf("%d " , node->item);
+    }
+    printSmallerValues(node->left,m);
+    printSmallerValues(node->right,m);
+   
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////
