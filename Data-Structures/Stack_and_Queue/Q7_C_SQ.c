@@ -105,50 +105,50 @@ int main()
 int balanced(char *expression)
 {
     Stack s;
+
     s.ll.head = NULL;
     s.ll.size = 0;
 
-    char *cur = expression;
-
-    while (*cur != '\0')
+    while (*expression != '\0')
     {
-        // 여는 괄호
-        if (*cur == '(' || *cur == '[' || *cur == '{')
+        if (*expression == '(' ||
+            *expression == '[' ||
+            *expression == '{')
         {
-            push(&s, *cur);
+            push(&s, *expression);
         }
 
-        // 닫는 괄호
-        else if (*cur == ')' || *cur == ']' || *cur == '}')
+        else if (*expression == ')' ||
+                 *expression == ']' ||
+                 *expression == '}')
         {
-            // 닫는 괄호가 나왔는데 스택이 비어있음
-            if (isEmptyStack(&s))
+            if ((peek(&s) == '(' && *expression == ')') ||
+                (peek(&s) == '{' && *expression == '}') ||
+                (peek(&s) == '[' && *expression == ']'))
             {
-                return 1;
+                pop(&s);
             }
-
-            int open = pop(&s);
-
-            // 짝이 안 맞으면 실패
-            if ((*cur == ')' && open != '(') ||
-                (*cur == ']' && open != '[') ||
-                (*cur == '}' && open != '{'))
+            else
             {
+                
                 return 1;
             }
         }
 
-        cur++;
+        expression++;
     }
 
-    // 문자열을 다 봤는데 여는 괄호가 남아있음
-    if (!isEmptyStack(&s))
+    if (isEmptyStack(&s))
     {
+        return 0;
+    }
+    else
+    {
+        
         return 1;
     }
-
-    return 0;
 }
+   
 
 ////////////////////////////////////////////////////////////
 
